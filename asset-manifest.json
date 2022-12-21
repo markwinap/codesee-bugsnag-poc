@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/codesee-bugsnag-poc/static/css/main.e6c13ad2.css",
+    "main.js": "/codesee-bugsnag-poc/static/js/main.9b4bd445.js",
+    "static/js/787.896bb213.chunk.js": "/codesee-bugsnag-poc/static/js/787.896bb213.chunk.js",
+    "index.html": "/codesee-bugsnag-poc/index.html",
+    "main.e6c13ad2.css.map": "/codesee-bugsnag-poc/static/css/main.e6c13ad2.css.map",
+    "main.9b4bd445.js.map": "/codesee-bugsnag-poc/static/js/main.9b4bd445.js.map",
+    "787.896bb213.chunk.js.map": "/codesee-bugsnag-poc/static/js/787.896bb213.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.9b4bd445.js"
+  ]
+}
