@@ -1,14 +1,15 @@
-import { useState } from 'react';
+import React from 'react';
+import Bugsnag from '@bugsnag/js'
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import { Grid, Button } from '@mui/material';
 // Services
-import { successFetch , unauthorizedFetch,forbiddenFetch, undefinedFetch, timeoutFetch, throwError, throwErrorAPIService, runOutOfMemory } from './services/yahoo-service';
+import { successFetch, unauthorizedFetch, forbiddenFetch, undefinedFetch, timeoutFetch, throwError, throwErrorAPIService, runOutOfMemory } from './services/yahoo-service';
+
 
 function App() {
-  const [statusCode, setStatusCode] = useState<number>(0);
+  const [statusCode, setStatusCode] = React.useState<number>(0);
 
   const handleSuccessClick = async () => {
     const response = await successFetch('TSLA');
@@ -40,6 +41,9 @@ function App() {
   }
   const handleOutMemory = () => {
     runOutOfMemory('TSLA');
+  }
+  const handleManualBugsnag = () => {
+    Bugsnag.notify(new Error('Manual Bugsnag'));
   }
   return (
     <Container maxWidth="sm">
@@ -113,6 +117,14 @@ function App() {
               variant="outlined"
               onClick={handleOutMemory}
             >Run Out Of Memory
+            </Button>
+          </Grid>
+          <Grid item xs={12}>
+            <Button
+              fullWidth
+              variant="outlined"
+              onClick={handleManualBugsnag}
+            >Manual Bugsnag Error
             </Button>
           </Grid>
         </Grid>
